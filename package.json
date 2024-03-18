@@ -1,0 +1,25 @@
+{
+  "name": "turso",
+  "module": "index.js",
+  "types": "index.ts",
+  "type": "module",
+  "scripts": {
+    "m:m": "drizzle-kit generate:sqlite --schema=./main/schema.ts --out=./main/migrations",
+    "m:t": "drizzle-kit generate:sqlite --schema=./tenant/schema.ts --out=./tenant/migrations",
+    "postinstall": "bun ./build.ts"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.5.6",
+    "bcrypt": "^5.1.1",
+    "drizzle-kit": "^0.20.14",
+    "drizzle-orm": "^0.29.3",
+    "prisma": "^5.10.0"
+  }
+}
